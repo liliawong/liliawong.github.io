@@ -12,17 +12,11 @@ jQuery(document).ready(function () {
         // });
     } else
     {
-        jQuery("html, .menu-wraper").niceScroll({cursorcolor: "#b1b1b1", scrollspeed: 100, mousescrollstep: 80, cursorwidth: "12px", cursorborder: "none", cursorborderradius: "0px"});
-
         //Smooth scroll on single post (comments)
         // jQuery('.post-num-comments a').click(function (e) {
         //     e.preventDefault();
         //     jQuery("html").getNiceScroll(0).doScrollTop(jQuery(this.hash).offset().top);
         // });
-
-        jQuery(".big-menu").mouseover(function () {
-            jQuery(".menu-wraper").getNiceScroll().resize();
-        });
     }
 
     jQuery(".site-content").fitVids();
@@ -268,7 +262,6 @@ var multiClickFunctionStop = function (e) {
                     var ua = navigator.userAgent.toLowerCase();
                     if (!(ua.indexOf("safari/") !== -1 && ua.indexOf("windows") !== -1 && ua.indexOf("chrom") === -1))
                     {
-                        jQuery("html").getNiceScroll().remove();
                         jQuery("html").css("cssText", "overflow: hidden !important");
                     }
                 } else
@@ -283,10 +276,6 @@ var multiClickFunctionStop = function (e) {
                 jQuery('#toggle, .menu-wraper').on("click", multiClickFunctionStop);
                 if (!is_touch_device()) {
                     var ua = navigator.userAgent.toLowerCase();
-                    if (!(ua.indexOf("safari/") !== -1 && ua.indexOf("windows") !== -1 && ua.indexOf("chrom") === -1))
-                    {
-                        jQuery("html").niceScroll({cursorcolor: "#CDC8C1", scrollspeed: 100, mousescrollstep: 80, cursorwidth: "12px", cursorborder: "none", cursorborderradius: "0px"});
-                    }
                 } else
                 {
                     jQuery("html").css("cssText", "overflow: auto !important");
